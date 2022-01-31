@@ -18,21 +18,25 @@ class SortedList {
   }
 
   max() {
-    if (this.items.length === 0){
-      throw new Error('EmptySortedList')
+    if (this.items.length === 0) {
+      throw new Error("EmptySortedList");
     }
-    return Math.max(...this.items)
+    return Math.max(...this.items);
   }
 
   min() {
-    if (this.items.length ===0 ) {
-      throw new Error ( 'EmptySortedList');
+    if (this.items.length === 0) {
+      throw new Error("EmptySortedList");
     } else {
       return Math.min.apply(null, this.items);
     }
   }
 
-  sum() {}
+  sum() {
+    return this.items.reduce((a, b) => {
+      return a + b;
+    }, 0);
+  }
 
   avg() {}
 }
